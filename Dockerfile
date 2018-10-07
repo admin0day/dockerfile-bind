@@ -17,9 +17,7 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 \
     && chown named:named /etc/rndc.key \
     && chmod 755 /entrypoint
 
-ENTRYPOINT [ "/entrypoint" ]
-
-CMD [ "/usr/sbin/init" ]
+CMD [ "/usr/sbin/init","systemctl start named"]
 
 
 
